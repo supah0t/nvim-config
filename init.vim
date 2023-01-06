@@ -180,6 +180,11 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -261,8 +266,8 @@ set ttimeoutlen=5
 
 set smartcase
 
-set tabstop=4
-set shiftwidth=4
+"set tabstop=2
+"set shiftwidth=2
 set expandtab
 
 "" Mouse
@@ -362,7 +367,4 @@ let g:ctrlsf_auto_focus = {
     \ 'at': 'start',
     \ }
 
-let g:ctrlsf_mapping = {
-    \ "vsplit": "<C-S>"
-    \ }
-
+let g:ctrlsf_mapping = { "vsplit": "<C-S>" }

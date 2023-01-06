@@ -1,0 +1,13 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "json"
+    ],
+    "prettier.tabWidth": 4,
+    "coc.preferences.jumpCommand": "vsp",
+    "prettier.singleQuote": true
+}
+
